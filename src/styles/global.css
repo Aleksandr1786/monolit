@@ -1,0 +1,77 @@
+@import "tailwindcss";@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+    background-color: #0A0A0F;
+    color: #D0D0D8;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-monolith {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    background: transparent;
+    border: 1px solid #4A4A5E;
+    color: #D0D0D8;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .btn-monolith::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #C8A882;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: -1;
+  }
+  .btn-monolith:hover {
+    border-color: #C8A882;
+    color: #0A0A0F;
+  }
+  .btn-monolith:hover::before {
+    transform: scaleX(1);
+  }
+  .heading-xl {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: #D0D0D8;
+  }
+  .heading-lg {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #D0D0D8;
+  }
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: #4A4A5E;
+    margin: 24px 0;
+  }
+}

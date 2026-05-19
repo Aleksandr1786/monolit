@@ -1,0 +1,39 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+import VantaBackground from '../components/VantaBackground.astro'
+import Manifesto from '../components/Manifesto.astro'
+import Vectors from '../components/Vectors.astro'
+import AiConsultant from '../components/AiConsultant.astro'
+import Portfolio from '../components/Portfolio.astro'
+import Calculator from '../components/Calculator.astro'
+---
+
+<MainLayout>
+  <VantaBackground />
+  <section class="h-screen flex flex-col items-center justify-center text-center px-4 md:px-6 relative">
+  <div class="absolute inset-0 bg-gradient-to-b from-monolith-bg/60 via-monolith-bg/40 to-monolith-bg/80 pointer-events-none"></div>
+  <div class="relative z-10">
+    <h1 class="heading-xl mb-6 text-3xl md:text-5xl lg:text-6xl">
+      Пространство, с которого<br />начинается новая глава
+    </h1>
+    <section class="h-screen flex flex-col items-center justify-center text-center px-4 md:px-6 relative">
+  <div class="absolute inset-0 bg-gradient-to-b from-monolith-bg/60 via-monolith-bg/40 to-monolith-bg/80 pointer-events-none"></div>
+  <div class="relative z-10">
+    <h1 class="heading-xl mb-6 text-3xl md:text-5xl lg:text-6xl">
+      Пространство, с которого<br class="hidden md:block" />начинается новая глава
+    </h1>
+    <div class="divider"></div>
+    <p class="text-monolith-text-secondary text-base md:text-lg max-w-xl mb-10 px-2">
+      Монолит. Архитектура жизни. Цельный ремонт.
+    </p>
+    <button class="btn-monolith text-sm md:text-base">
+      Начать погружение
+    </button>
+  </div>
+</section>
+  <Manifesto />
+  <Vectors />
+  <AiConsultant />
+  <Portfolio />
+  <Calculator />
+</MainLayout>
