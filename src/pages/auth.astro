@@ -1,16 +1,25 @@
 ---
 ---
 
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Перенаправление</title>
+  <meta charset="utf-8">
+  <title>Auth</title>
 </head>
 <body>
-  <p>Вход выполнен. Перенаправляю в админку...</p>
   <script>
-    document.location.href = '/admin/';
+    const token = window.location.hash.split('&').find(p => p.startsWith('#access_token='));
+    if (token) {
+      const access_token = token.replace('#access_token=', '');
+      localStorage.setItem('netlify-cms-user', JSON.stringify({
+        token: access_token,
+        backend: { name: 'github', repo: 'Aleksandr1786/monolit' }
+      }));
+      window.location.href = '/admin/';
+    } else {
+      document.write('Authorization failed. <a href="/admin/">Try again</a>');
+    }
   </script>
 </body>
 </html>
