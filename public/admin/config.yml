@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Aleksandr1786/monolit
   branch: main
 
 media_folder: "public/images/portfolio"
