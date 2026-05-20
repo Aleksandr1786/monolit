@@ -2,6 +2,9 @@ backend:
   name: github
   repo: Aleksandr1786/monolit
   branch: main
+  client_id: Ov23li4qbWLCMsSMjbtH
+  base_url: https://timely-pavlova-cd7b47.netlify.app
+  auth_endpoint: auth
 
 media_folder: "public/images/portfolio"
 public_folder: "/images/portfolio"

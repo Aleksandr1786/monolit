@@ -8,13 +8,15 @@
   <title>Auth</title>
 </head>
 <body>
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
-    const token = window.location.hash.split('&').find(p => p.startsWith('#access_token='));
-    if (token) {
-      const access_token = token.replace('#access_token=', '');
+    const hash = window.location.hash.substring(1);
+    const params = new URLSearchParams(hash);
+    const access_token = params.get('access_token');
+    if (access_token) {
       localStorage.setItem('netlify-cms-user', JSON.stringify({
         token: access_token,
-        backend: { name: 'github', repo: 'Aleksandr1786/monolit' }
+        backend: { name: 'github', repo: 'Aleksandr1786/monolit', branch: 'main' }
       }));
       window.location.href = '/admin/';
     } else {
