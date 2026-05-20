@@ -79,7 +79,9 @@ import '../styles/global.css';
     </script>
     <script>
   if (window.netlifyIdentity) {
-    window.netlifyIdentity.init();
+    window.netlifyIdentity.init({
+      APIUrl: "https://timely-pavlova-cd7b47.netlify.app/.netlify/identity"
+    });
     window.netlifyIdentity.on("init", user => {
       if (!user) {
         window.netlifyIdentity.on("login", () => {
@@ -87,6 +89,7 @@ import '../styles/global.css';
         });
       }
     });
+    window.netlifyIdentity.on("error", err => console.error("Identity error", err));
   }
 </script>
   </body>
